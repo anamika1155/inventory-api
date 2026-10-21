@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/inventorydb}
+    username: ${SPRING_DATASOURCE_USERNAME:inventory_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:inventory_pass}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
